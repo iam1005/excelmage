@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORMULA RUN · ITQ 엑셀 타이핑</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header><a class="brand" href="./index.html"><span class="brand-icon">ƒx</span> FORMULA RUN</a><span class="badge">ITQ EXCEL PRACTICE</span></header>
+    <section class="intro"><p class="eyebrow">손끝으로 익히는 엑셀 함수</p><h1>함수가 익숙해지는<br><span>가장 가벼운 연습.</span></h1><p>한 단어씩 입력하며 ITQ 엑셀 함수를 익혀보세요.<br>언제 멈춰도, 지금까지의 기록을 확인할 수 있어요.</p></section>
+    <section class="workspace">
+      <aside class="settings"><div class="section-label">01 / 연습 설정</div><h2>오늘의 연습 범위</h2><label for="category">함수 분류</label><select id="category"></select><label class="check"><input type="checkbox" id="shuffle" checked> 무작위 순서로 연습</label><div class="scope"><strong id="scope-count">80</strong><span>개의 함수가 기다리고 있어요</span></div><div class="hint"><span>HOW TO PLAY</span><p>함수 이름을 입력하고 <kbd>Enter</kbd><br>정확하게 입력하면 다음 함수로!</p><p>영문 입력 모드를 사용하세요.<br>대소문자는 구분하지 않아요.</p></div><button id="start" class="primary">연습 시작 <span>→</span></button></aside>
+      <section class="game" aria-label="타이핑 연습">
+        <div class="game-top"><span id="status" class="status">● 준비 완료</span><span id="position">READY TO TYPE</span></div>
+        <div class="progress"><div id="progress-fill"></div></div>
+        <div class="stats"><div><span>타이핑 속도</span><strong><b id="speed">0</b> <small>타/분</small></strong></div><div><span>정확도</span><strong><b id="accuracy">—</b><small> %</small></strong></div><div><span>연습 시간</span><strong id="elapsed">00:00</strong></div></div>
+        <div class="target-area"><span id="target-category" class="target-category">LET’S GET STARTED</span><div id="target" class="target">READY?</div><p id="target-help">시작 버튼을 누르면 첫 번째 함수가 나타납니다.</p></div>
+        <label class="sr-only" for="typing">표시된 함수 입력</label><input id="typing" class="typing" type="text" placeholder="여기에 함수 이름을 입력하세요" autocomplete="off" autocapitalize="off" spellcheck="false" disabled aria-describedby="feedback">
+        <div class="input-meta"><span id="feedback" role="status">첫 입력부터 시간이 측정됩니다.</span><span><kbd>Enter</kbd> 다음 함수</span></div>
+        <div class="game-bottom"><span>작은 반복이 실력이 됩니다.</span><button id="stop" disabled>연습 종료 ↗</button></div>
+      </section>
+    </section>
+    <footer><span>EXCEL SKILLS, ONE KEY AT A TIME.</span><span>첨부된 ITQ 함수 출제 범위 기준 · 함수 이름 연습</span></footer>
+  </main>
+  <dialog id="results" aria-labelledby="result-title"><div class="result-icon">✓</div><p class="eyebrow">YOUR PRACTICE REPORT</p><h2 id="result-title">오늘도 한 걸음 앞으로.</h2><p id="result-description"></p><div class="result-speed"><strong id="result-speed">0</strong><span>타/분</span></div><div class="result-grid"><div><span>정확도</span><strong id="result-accuracy"></strong></div><div><span>완료한 함수</span><strong id="result-progress"></strong></div><div><span>연습 시간</span><strong id="result-time"></strong></div></div><p class="result-note">타이핑 속도 = 정확하게 입력한 영문 문자 수 ÷ 연습 시간(분).<br>공백·Enter·삭제 키는 제외하며, 중간 종료 시 현재 입력도 포함합니다.<br>정확도는 입력한 문자 중 올바른 위치에 입력한 문자의 비율입니다.</p><button id="again" class="primary">같은 설정으로 다시 연습 →</button><button id="close" class="secondary">설정으로 돌아가기</button></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
+
