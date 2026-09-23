@@ -1,0 +1,9 @@
+.function-note{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:16px 18px;margin:0 0 20px;background:#f4f8f1;border:1px solid #e1eadb;border-radius:11px;min-height:91px}
+.function-note>div+div{border-left:1px solid #dce7d6;padding-left:18px}
+.function-note span{font-size:9px;font-weight:800;letter-spacing:1.2px;color:#538366}
+.function-note p{font-size:12px;line-height:1.6;margin:7px 0 0;color:#315340}
+.function-note code{display:block;margin-top:8px;font-size:12px;line-height:1.5;color:#206d51;overflow-wrap:anywhere}
+footer a{color:inherit;text-underline-offset:2px}
+footer a:hover{color:#17694f}
+@media(max-width:700px){.function-note{grid-template-columns:1fr;gap:10px}.function-note>div+div{border-left:0;border-top:1px solid #dce7d6;padding:10px 0 0}}
+
