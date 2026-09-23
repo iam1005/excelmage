@@ -26,6 +26,8 @@ function updateStats() {const m=metrics(); $('speed').textContent=m.speed; $('ac
 function drawTarget() {
   const item=state.queue[state.index];
   $('target-category').textContent=item.category;
+  $('function-description').textContent=functionInfo[item.name][0];
+  $('function-example').textContent=functionInfo[item.name][1];
   $('target').replaceChildren(...[...item.name].map((ch,i) => {const span=document.createElement('span'); span.textContent=ch; if(i<$('typing').value.length) span.className=$('typing').value[i].toUpperCase()===ch?'correct':'wrong'; return span;}));
   $('position').textContent=`${state.index+1} / ${state.queue.length}`;
   $('progress-fill').style.width=`${state.index/state.queue.length*100}%`;
@@ -51,7 +53,7 @@ function finish(completed) {
   $('result-speed').textContent=m.speed; $('result-accuracy').textContent=m.accuracy===null?'—':`${m.accuracy}%`;
   $('result-progress').textContent=`${state.index} / ${state.queue.length}`;$('result-time').textContent=timeLabel(m.seconds);
   $('progress-fill').style.width=`${state.index/state.queue.length*100}%`;
-  if(completed){$('position').textContent=`${state.index} / ${state.queue.length}`;$('target').textContent='WELL DONE!';$('target-help').textContent='모든 함수를 연습했습니다.';}
+  if(completed){$('position').textContent=`${state.index} / ${state.queue.length}`;$('target').textContent='WELL DONE!';$('target-help').textContent='모든 함수를 연습했습니다.';$('function-description').textContent='모든 함수의 의미와 사용 예를 살펴봤어요.';$('function-example').textContent='다시 연습해보세요!';}
   $('results').showModal();
 }
 $('category').append(new Option('전체 함수', ''),...Object.keys(categories).map(name=>new Option(name,name)));
