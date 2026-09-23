@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FORMULA RUN · ITQ 엑셀 타이핑</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="notes.css">
 </head>
 <body>
   <main class="app">
@@ -17,14 +18,16 @@
         <div class="progress"><div id="progress-fill"></div></div>
         <div class="stats"><div><span>타이핑 속도</span><strong><b id="speed">0</b> <small>타/분</small></strong></div><div><span>정확도</span><strong><b id="accuracy">—</b><small> %</small></strong></div><div><span>연습 시간</span><strong id="elapsed">00:00</strong></div></div>
         <div class="target-area"><span id="target-category" class="target-category">LET’S GET STARTED</span><div id="target" class="target">READY?</div><p id="target-help">시작 버튼을 누르면 첫 번째 함수가 나타납니다.</p></div>
+        <div class="function-note" aria-live="polite"><div><span>WHAT IT DOES</span><p id="function-description">함수를 입력하면 뜻과 사용 예가 여기에 표시됩니다.</p></div><div><span>EXCEL EXAMPLE</span><code id="function-example">=함수(값)</code></div></div>
         <label class="sr-only" for="typing">표시된 함수 입력</label><input id="typing" class="typing" type="text" placeholder="여기에 함수 이름을 입력하세요" autocomplete="off" autocapitalize="off" spellcheck="false" disabled aria-describedby="feedback">
         <div class="input-meta"><span id="feedback" role="status">첫 입력부터 시간이 측정됩니다.</span><span><kbd>Enter</kbd> 다음 함수</span></div>
         <div class="game-bottom"><span>작은 반복이 실력이 됩니다.</span><button id="stop" disabled>연습 종료 ↗</button></div>
       </section>
     </section>
-    <footer><span>EXCEL SKILLS, ONE KEY AT A TIME.</span><span>첨부된 ITQ 함수 출제 범위 기준 · 함수 이름 연습</span></footer>
+    <footer><span>EXCEL SKILLS, ONE KEY AT A TIME.</span><span>첨부된 ITQ 함수 출제 범위 기준 · <a href="https://support.microsoft.com/ko-kr/excel/excel-functions-by-category" target="_blank" rel="noopener noreferrer">Microsoft 함수 도움말</a></span></footer>
   </main>
   <dialog id="results" aria-labelledby="result-title"><div class="result-icon">✓</div><p class="eyebrow">YOUR PRACTICE REPORT</p><h2 id="result-title">오늘도 한 걸음 앞으로.</h2><p id="result-description"></p><div class="result-speed"><strong id="result-speed">0</strong><span>타/분</span></div><div class="result-grid"><div><span>정확도</span><strong id="result-accuracy"></strong></div><div><span>완료한 함수</span><strong id="result-progress"></strong></div><div><span>연습 시간</span><strong id="result-time"></strong></div></div><p class="result-note">타이핑 속도 = 정확하게 입력한 영문 문자 수 ÷ 연습 시간(분).<br>공백·Enter·삭제 키는 제외하며, 중간 종료 시 현재 입력도 포함합니다.<br>정확도는 입력한 문자 중 올바른 위치에 입력한 문자의 비율입니다.</p><button id="again" class="primary">같은 설정으로 다시 연습 →</button><button id="close" class="secondary">설정으로 돌아가기</button></dialog>
+  <script src="function-info.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
